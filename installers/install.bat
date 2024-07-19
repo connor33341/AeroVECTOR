@@ -2,13 +2,13 @@
 setlocal
 
 :: Variables - modify these as needed
-set "REPO_URL=https://github.com/cw-aerospace/aerovector/archive/refs/heads/main.zip"
+set "REPO_URL=https://github.com/connor33341/aerovector/archive/refs/heads/master.zip"
 set "ZIP_FILE=repo.zip"
 set "EXTRACT_DIR=repo"
-set "SCRIPT_TO_RUN=repo-main\script.bat"
+set "SCRIPT_TO_RUN=aerovector-master\installers\configure.bat"
 
 :: Download the repository
-echo Downloading repository...
+echo "Downloading AeroVector"
 curl -L -o "%ZIP_FILE%" "%REPO_URL%"
 if %ERRORLEVEL% neq 0 (
     echo Failed to download the repository.
@@ -16,7 +16,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: Unzip the repository
-echo Unzipping repository...
+echo "Unziping AeroVector"
 tar -xf "%ZIP_FILE%"
 if %ERRORLEVEL% neq 0 (
     echo Failed to unzip the repository.
@@ -24,7 +24,7 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: Run the batch file located in the repository
-echo Running the script...
+echo "Running configure.bat"
 call "%SCRIPT_TO_RUN%"
 if %ERRORLEVEL% neq 0 (
     echo Failed to run the script.
@@ -32,10 +32,10 @@ if %ERRORLEVEL% neq 0 (
 )
 
 :: Clean up
-echo Cleaning up...
+echo "Cleaning up"
 del "%ZIP_FILE%"
 rd /s /q "%EXTRACT_DIR%"
 
-echo Done.
+echo "Done"
 endlocal
 pause
