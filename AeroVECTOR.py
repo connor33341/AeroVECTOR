@@ -42,13 +42,14 @@ unless you are using SITL.
 
 import sys
 import os
-os.chdir(os.path.dirname(sys.argv[0]))
+#os.chdir(os.path.dirname(sys.argv[0]))
 import matplotlib
 import tkinter as tk
 from tkinter import ttk
 from src import gui_setup
 matplotlib.use('TkAgg')
 
+print("Loading")
 # Main
 root = tk.Tk()
 root.title("AeroVECTOR - The Model Rocket Simulator & Tuner")

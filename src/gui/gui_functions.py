@@ -954,6 +954,7 @@ class TabWithCanvas(Tab):
         self._update_labels()
 
     def _draw_points(self):
+        #self._create_point_xcg()
         self.canvas.delete(self.xcg_point_canvas, self.cp_point_canvas)
         self._update_scale_limits()
         self._create_point_cp()

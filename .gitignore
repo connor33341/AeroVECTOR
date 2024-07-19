@@ -1,2 +1,10 @@
 repo.zip
 AeroVECTOR-master
+*.pyc
+*.c
+*.h
+*.cpp
+*.hpp
+__pycache__
+build
+dist
